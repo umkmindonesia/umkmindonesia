@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login dan Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f0; /* Latar belakang abu-abu lembut */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff; /* Latar belakang form putih */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-box {
+            padding: 20px;
+            display: none; /* Sembunyikan form secara default */
+        }
+
+        .form-box.active {
+            display: block; /* Tampilkan form yang aktif */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #800000; /* Warna judul coklat tua */
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #800000; /* Warna label coklat sedang */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #800000; /* Border input coklat tua */
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #800000; /* Tombol warna coklat muda */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #800000; /* Warna hover tombol lebih gelap */
+        }
+
+        p {
+            text-align: center;
+        }
+
+        a {
+            color: #800000; /* Tautan warna coklat tua */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-box active" id="login-box">
+                <h2>Login</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="username">Nama Pengguna:</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Kata Sandi:</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit">Masuk</button>
+                    <p>Belum punya akun? <a href="#" onclick="toggleForm()">Daftar di sini</a></p>
+                </form>
+            </div>
+            <div class="form-box" id="signup-box">
+                <h2>Sign Up</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="signup-username">Nama Pengguna:</label>
+                        <input type="text" id="signup-username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-email">Alamat Email:</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="signup-password">Kata Sandi:</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    <button type="submit">Daftar</button>
+                    <p>Sudah punya akun? <a href="#" onclick="toggleForm()">Masuk di sini</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleForm() {
+            const loginBox = document.getElementById('login-box');
+            const signupBox = document.getElementById('signup-box');
+            loginBox.classList.toggle('active');
+            signupBox.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
